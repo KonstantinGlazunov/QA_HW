@@ -25,13 +25,11 @@ public class BrokenImagesPage extends BasePage {
                 Boolean imageDisplayed = (Boolean) ((JavascriptExecutor) driver)
                         .executeScript("return (typeof arguments[0].naturalWidth != undefined && arguments[0].naturalWidth>0);", image);
                 if (imageDisplayed) {
-                    System.out.println("Image " + (i+1) + " is OK");
-                    System.out.println("Url: " + imageUrl);
-                    System.out.println("-------------------");
+                    System.out.println("Image " + (i + 1) + " is OK \n" + "Url: " + imageUrl
+                            + "\n--------------------");
                 } else {
-                    System.err.println("Image " + i + 1 + " is BROKEN!");
-                    System.err.println("Url: " + imageUrl);
-                    System.out.println("--------------------");
+                    System.err.println("Image " + i + 1 + " is BROKEN! \n" + "Url: " + imageUrl
+                            + "\n--------------------");
                 }
             } catch (Exception e) {
                 System.err.println("Error occurred");
