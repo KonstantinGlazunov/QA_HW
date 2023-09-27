@@ -5,10 +5,6 @@ import org.ait.demoqa.pages.HomePage;
 import org.ait.demoqa.pages.SidePanel;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.time.Duration;
 
 public class AlertsTests extends TestBase {
     @BeforeMethod
@@ -26,12 +22,9 @@ public class AlertsTests extends TestBase {
 
     @Test
     public void acceptOkTimeAlert() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
-        AlertsPage page = new AlertsPage(driver).clickOntimerAlertButton();
-        wait.until(ExpectedConditions.alertIsPresent());
-        page.verifyTextOnAlert("This alert appeared after 5 seconds")
+        new AlertsPage(driver).clickOntimerAlertButtonAndWiteAlert()
+                .verifyTextOnAlert("This alert appeared after 5 seconds")
                 .acceptAlert();
-
     }
 
     @Test

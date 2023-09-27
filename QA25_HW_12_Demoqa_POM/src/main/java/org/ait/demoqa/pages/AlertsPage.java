@@ -45,8 +45,10 @@ public class AlertsPage extends BasePage {
     @FindBy(id = "timerAlertButton")
     WebElement timerAlertButton;
 
-    public AlertsPage clickOntimerAlertButton() {
+    public AlertsPage clickOntimerAlertButtonAndWiteAlert() {
         click(timerAlertButton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(6));
+        wait.until(ExpectedConditions.alertIsPresent());
         return this;
     }
 
