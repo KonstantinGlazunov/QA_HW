@@ -15,9 +15,6 @@ public class DropdownListPage extends BasePage {
     @FindBy(id = "dropdown")
     WebElement dropdown;
 
-    @FindBy(id = "#react-select-2-input")
-    WebElement optionInput;
-
     public DropdownListPage selectOption(String option) {
         Select select = new Select(dropdown);
         select.selectByVisibleText(option);
